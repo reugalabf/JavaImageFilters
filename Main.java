@@ -7,6 +7,8 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.awt.Graphics2D;
 
+import ImageFilters.*;
+
 public class Main {
   private static Map<String, Filter> filters = new HashMap<String, Filter>();
   private static ArrayList<Filter> activeFilters = new ArrayList<Filter>();
@@ -73,5 +75,6 @@ public class Main {
     filters.put("--rgb-shifter", new RGBShifter());
     filters.put("--repeater", new Repeater());
     filters.put("--rgb-shift-repeater", new RGBShiftRepeater());
+    filters.put("--none", new Dull());
   }
 }

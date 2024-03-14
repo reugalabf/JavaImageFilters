@@ -1,3 +1,5 @@
+package ImageFilters;
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.IOException;
@@ -7,7 +9,7 @@ import java.awt.image.BufferedImage;
 
 public class Artifacter extends Filter {
   public static File tempFile = new File("/tmp/artifacter.jpg");
-  public static float compressionQuality = 0.075f;
+  public static float compressionQuality = 0.005f;
     
   public BufferedImage filter(BufferedImage image) {
     // Change the image to a jpg to satisfy the native image writer

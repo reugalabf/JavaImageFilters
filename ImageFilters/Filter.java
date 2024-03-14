@@ -1,3 +1,5 @@
+package ImageFilters;
+
 import java.awt.image.BufferedImage;
 
 public abstract class Filter {
