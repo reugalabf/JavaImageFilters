@@ -7,7 +7,7 @@ import javax.imageio.*;
 import javax.imageio.stream.*;
 import java.awt.image.BufferedImage;
 
-public class Dull extends Filter {
+public class Dull extends AbstractFilter {
   
   
     

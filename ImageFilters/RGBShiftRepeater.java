@@ -3,7 +3,7 @@ package ImageFilters;
 import java.awt.image.BufferedImage;
 import java.awt.Graphics2D;
 
-public class RGBShiftRepeater extends Filter {
+public class RGBShiftRepeater extends AbstractFilter {
   final public static int X_REPEAT = 3;
   final public static int Y_REPEAT = 3;
 

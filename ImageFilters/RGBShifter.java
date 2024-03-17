@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 import java.awt.Color;
 import java.util.Random;
 
-public class RGBShifter extends Filter {
+public class RGBShifter extends AbstractFilter {
   public BufferedImage filter(BufferedImage image) {
     Random rand = new Random();
     int rShift = rand.nextInt(256);

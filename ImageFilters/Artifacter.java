@@ -7,7 +7,7 @@ import javax.imageio.*;
 import javax.imageio.stream.*;
 import java.awt.image.BufferedImage;
 
-public class Artifacter extends Filter {
+public class Artifacter extends AbstractFilter {
   public static File tempFile = new File("/tmp/artifacter.jpg");
   public static float compressionQuality = 0.005f;
     

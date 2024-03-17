@@ -3,7 +3,7 @@ package ImageFilters;
 import java.awt.image.BufferedImage;
 import java.awt.Color;
 
-public class Rainbow extends Filter {
+public class Rainbow extends AbstractFilter {
   public BufferedImage filter(BufferedImage image) {
     for (int x = 0; x < image.getWidth(); x++) {
       for (int y = 0; y < image.getHeight(); y++) {
