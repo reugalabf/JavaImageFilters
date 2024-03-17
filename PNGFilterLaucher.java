@@ -8,23 +8,24 @@ import java.awt.image.BufferedImage;
 import java.awt.Graphics2D;
 
 import ImageFilters.*;
+import Pipes.*;
 
-public class Main {
-  private static Map<String, Filter> filters = new HashMap<String, Filter>();
-  private static ArrayList<Filter> activeFilters = new ArrayList<Filter>();
+public class PNGFilterLaucher {
+  private static Map<String, ImageFilter> filters = new HashMap<String, ImageFilter>();
+  private static ArrayList<ImageFilter> activeFilters = new ArrayList<ImageFilter>();
   private static File inputFile;
   private static File outputFile;
 
   public static void main(String args[]) {
     // Initialize the list of filers
-    Main.initializeFilters();
+    PNGFilterLaucher.initializeFilters();
 
     // Process the arguments
     if (args.length < 2) {
       System.out.println("Usage: java Main input-file output-file [--filter]");
       return;
     }
-    Main.processArgs(args);
+    PNGFilterLaucher.processArgs(args);
 
     // Read the image file
     BufferedImage image;
@@ -42,7 +43,7 @@ public class Main {
 
     // Filter the image
     for (int i = 0; i < activeFilters.size(); i++) {
-      image = ((Filter)activeFilters.get(i)).filter(image);
+      image = ((ImageFilter)activeFilters.get(i)).filter(image);
     }
 
     // Write the image file
@@ -60,7 +61,7 @@ public class Main {
     outputFile = new File(args[1]);
 
     for (int i = 2; i < args.length; i++) {
-      Filter filter = filters.get(args[i]);
+      ImageFilter filter = filters.get(args[i]);
       if (filter == null) {
         System.out.println("No filter matches '" + args[i] + "'");
       } else {
@@ -75,6 +76,9 @@ public class Main {
     filters.put("--rgb-shifter", new RGBShifter());
     filters.put("--repeater", new Repeater());
     filters.put("--rgb-shift-repeater", new RGBShiftRepeater());
-    filters.put("--none", new Dull());
+    //filters.put("--none", new Dull());
+    filters.put("--none", new ImageFilterPipe(new Dull()));
+
+
   }
 }
