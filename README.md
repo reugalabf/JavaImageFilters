@@ -4,12 +4,12 @@ This project contains a number of image filters written in Java as well as an in
 
 ## Usage
 
-After cloning the repo, compile the `Main` class.
+After cloning the repo, compile the `PNGFilterLauncher` class.
 Then run it with the input file, output file, and desired filters as arguments.
 
 ```shell
-javac Main.java
-java Main input.png output.png --rainbow --artifacter
+javac PNGFilterLauncher.java
+java PNGFilterLauncher input.png output.png --rainbow --artifacter
 ```
 
 The input file can be any file `ImageIO` can read.
@@ -23,6 +23,7 @@ This filter adjusts the the hue of pixels in the image based on where the pixel 
 The result is a rainbow like effect.
 
 The command line argument for this filter is `--rainbow`.
+
 
 | Before | After |
 |--------|-------|
