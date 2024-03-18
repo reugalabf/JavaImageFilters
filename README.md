@@ -71,3 +71,7 @@ The command line argument for this filter is `--rgb-shift-repeater`.
 | Before | After |
 |--------|-------|
 | ![Before](https://github.com/jmhooper/JavaImageFilters/blob/master/img/rgb-shift-repeater/before.png) | ![After](https://github.com/jmhooper/JavaImageFilters/blob/master/img/rgb-shift-repeater/after.png) |
+
+## Pipes
+This version includes a feature that makes it possible to create sequences of filters as sequences of objects.
+
