@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import java.awt.Graphics2D;
 
 import ImageFilters.*;
+import Pipes.ImageFilterPipe;
 
 public class PNGFilterLauncher {
   private static Map<String, ImageFilter> filters = new HashMap<String, ImageFilter>();
@@ -69,6 +70,18 @@ public class PNGFilterLauncher {
     }
   }
 
+  static ImageFilter getRainbowArtifactPipe(){
+    ImageFilterPipe aPipe = new ImageFilterPipe(new Rainbow() )  ;
+    aPipe.addFilter(new Artifacter() );
+    return aPipe;
+  }
+
+  static ImageFilter getMonoArtifactPipe(){
+    ImageFilterPipe aPipe = new ImageFilterPipe(new Monochrome() )  ;
+    aPipe.addFilter(new Artifacter() );
+    return aPipe;
+  }
+
   static void initializeFilters() {
     filters.put("--rainbow", new Rainbow());
     filters.put("--artifacter", new Artifacter());
@@ -76,5 +89,9 @@ public class PNGFilterLauncher {
     filters.put("--repeater", new Repeater());
     filters.put("--rgb-shift-repeater", new RGBShiftRepeater());
     filters.put("--none", new Dull());
+    filters.put("--mono", new Monochrome());
+    filters.put("--rain-arti", getRainbowArtifactPipe());
+    filters.put("--mono-arti", getMonoArtifactPipe());
+    
   }
 }
